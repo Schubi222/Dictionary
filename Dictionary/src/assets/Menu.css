@@ -1,0 +1,46 @@
+.Menu {
+  display: flex;
+  flex-direction: row;
+  width: 100%;
+  justify-content: space-between;
+  align-items: center;
+  height: 80px;
+}
+.Menu__left {
+  width: 60px;
+  height: 60px;
+  cursor: pointer;
+}
+.Menu__left > img {
+  width: 60px;
+  height: 60px;
+}
+.Menu__right {
+  display: flex;
+  gap: 20px;
+  align-items: center;
+}
+.Menu__right #font {
+  border: none;
+  height: fit-content;
+  width: fit-content;
+  background-color: #242424;
+  color: #a842f8;
+  -webkit-text-fill-color: rgba(255, 255, 255, 0.87);
+}
+.Menu__right #font option {
+  color: rgba(255, 255, 255, 0.87);
+}
+.Menu__right .color-mode {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  padding-left: 20px;
+  border-left: 1px solid darkgrey;
+}
+.Menu__right .color-mode > img {
+  width: 30px;
+  height: 30px;
+}
+
+/*# sourceMappingURL=Menu.css.map */

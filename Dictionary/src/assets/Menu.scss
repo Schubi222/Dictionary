@@ -1,0 +1,51 @@
+@use "variables";
+.Menu{
+  display: flex;
+  flex-direction: row;
+  width: 100%;
+  justify-content: space-between;
+  align-items: center;
+  height: 80px;
+  &__left{
+    width: 60px;
+    height: 60px;
+    cursor: pointer;
+    & > img{
+      width: 60px;
+      height: 60px;
+    }
+  }
+  &__right{
+    display: flex;
+    gap: 20px;
+    align-items: center;
+    #font{
+      border: none;
+      height: fit-content;
+      width: fit-content;
+      background-color: variables.$background-color;
+
+      color: variables.$call-to-action;
+      -webkit-text-fill-color: variables.$text-color;
+
+      option{
+        color: variables.$text-color;
+      }
+    }
+    .color-mode{
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      padding-left: 20px;
+      border-left: 1px solid darkgrey;
+      > img{
+        width: 30px;
+        height: 30px;
+      }
+    }
+  }
+}
+
+select {
+
+}
