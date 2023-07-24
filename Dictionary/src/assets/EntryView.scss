@@ -1,7 +1,132 @@
-.footer{
-  display: inline;
-  a {
+.error::placeholder{
+  color: darkred;
+}
+
+.Entry{
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+  margin-top: 15px;
+  overflow: hidden;
+  width: 100%;
+  #search{
+    border-radius: 9999px;
+    outline: none;
+    border: 2px solid darkgray;
+    padding: 10px 25px;
+    margin: 15px 0 100px 0;
+    font-family: unset;
+    width: 40%;
+    align-self: center;
+  }
+  .Content{
+    text-align: left;
+
+  }
+}
+.Pronunciation{
+  display: grid;
+  grid-template-areas:
+              'word audio'
+              'phonetics audio';
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 50px;
+  .word{
+    grid-area: word;
+    font-weight: bolder;
+    font-size: 4rem;
+  }
+  .phonetics{
+    grid-area: phonetics;
+    color: var(--call-to-action);
+  }
+  .audio{
+    grid-area: audio;
+    border-radius: 100%;
+    width: 70px;
+    height: 70px;
+    background: lighten(#A842F8FF, 25%);
+    color: var(--call-to-action);
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+    transition: .2s;
+    & > span{
+      font-size: 2rem;
+    }
+    &:hover{
+      filter:drop-shadow(0px 0px 2px lighten(#A842F8FF, 30%));
+    }
+  }
+}
+
+.Word-Types{
+  .word-type{
+    font-weight: bold;
+    margin: 30px 0;
     display: inline;
+    position: relative;
+
+    &:after{
+      border-bottom: 1px solid rgba(211, 211, 211, 0.52);
+      width: 100vw;
+      top: 13px;
+      height: 1px;
+      position: absolute;
+      content: "";
+      text-align: center;
+      margin: 0 40px;
+    }
+  }
+}
+.Meaning{
+  ul{
+    list-style: none;
+    & li:before{
+      content: "\2022";
+      color: var(--call-to-action);
+      font-weight: bold;
+      display: inline-block;
+      width: 1em;
+      margin-left: -1em;
+    }
+  }
+}
+.Synonyms{
+  display: flex;
+  gap: 10px;
+  align-items: center;
+  div{
+    color: var(--call-to-action);
+    cursor: pointer;
+    transition: .2s;
+    &:hover{
+      color:lighten(#A842F8FF, 10%)
+    }
+    &:after{
+      content: ",";
+    }
+    &:last-of-type:after{
+      content: '';
+    }
+  }
+}
+
+.footer{
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  flex-wrap: wrap;
+  a {
+    color: var(--call-to-action);
+    cursor: pointer;
+    transition: .2s;
+    &:hover{
+      color:lighten(#A842F8FF, 10%)
+    }
     &:after{
       content: ",";
     }
@@ -10,6 +135,10 @@
     }
   }
 }
-.error::placeholder{
-  color: darkred;
+
+@media (max-width: 1000px) {
+  #search{
+    width: 80% !important;
+
+  }
 }

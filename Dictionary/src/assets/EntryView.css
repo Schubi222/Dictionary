@@ -1,8 +1,129 @@
-.footer {
+@charset "UTF-8";
+.error::placeholder {
+  color: darkred;
+}
+
+.Entry {
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+  margin-top: 15px;
+  overflow: hidden;
+  width: 100%;
+}
+.Entry #search {
+  border-radius: 9999px;
+  outline: none;
+  border: 2px solid darkgray;
+  padding: 10px 25px;
+  margin: 15px 0 100px 0;
+  font-family: unset;
+  width: 40%;
+  align-self: center;
+}
+.Entry .Content {
+  text-align: left;
+}
+
+.Pronunciation {
+  display: grid;
+  grid-template-areas: "word audio" "phonetics audio";
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 50px;
+}
+.Pronunciation .word {
+  grid-area: word;
+  font-weight: bolder;
+  font-size: 4rem;
+}
+.Pronunciation .phonetics {
+  grid-area: phonetics;
+  color: var(--call-to-action);
+}
+.Pronunciation .audio {
+  grid-area: audio;
+  border-radius: 100%;
+  width: 70px;
+  height: 70px;
+  background: #e1bdfd;
+  color: var(--call-to-action);
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  cursor: pointer;
+  transition: 0.2s;
+}
+.Pronunciation .audio > span {
+  font-size: 2rem;
+}
+.Pronunciation .audio:hover {
+  filter: drop-shadow(0px 0px 2px #ecd6fd);
+}
+
+.Word-Types .word-type {
+  font-weight: bold;
+  margin: 30px 0;
   display: inline;
+  position: relative;
+}
+.Word-Types .word-type:after {
+  border-bottom: 1px solid rgba(211, 211, 211, 0.52);
+  width: 100vw;
+  top: 13px;
+  height: 1px;
+  position: absolute;
+  content: "";
+  text-align: center;
+  margin: 0 40px;
+}
+
+.Meaning ul {
+  list-style: none;
+}
+.Meaning ul li:before {
+  content: "•";
+  color: var(--call-to-action);
+  font-weight: bold;
+  display: inline-block;
+  width: 1em;
+  margin-left: -1em;
+}
+
+.Synonyms {
+  display: flex;
+  gap: 10px;
+  align-items: center;
+}
+.Synonyms div {
+  color: var(--call-to-action);
+  cursor: pointer;
+  transition: 0.2s;
+}
+.Synonyms div:hover {
+  color: #bf73fa;
+}
+.Synonyms div:after {
+  content: ",";
+}
+.Synonyms div:last-of-type:after {
+  content: "";
+}
+
+.footer {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  flex-wrap: wrap;
 }
 .footer a {
-  display: inline;
+  color: var(--call-to-action);
+  cursor: pointer;
+  transition: 0.2s;
+}
+.footer a:hover {
+  color: #bf73fa;
 }
 .footer a:after {
   content: ",";
@@ -11,8 +132,10 @@
   content: "";
 }
 
-.error::placeholder {
-  color: darkred;
+@media (max-width: 1000px) {
+  #search {
+    width: 80% !important;
+  }
 }
 
 /*# sourceMappingURL=EntryView.css.map */

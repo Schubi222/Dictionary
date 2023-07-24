@@ -9,11 +9,6 @@
   --text-color:#191919;
   --opposite-color:black;
 }
-:root * {
-  font-family: unset;
-  color: unset;
-  background-color: unset;
-}
 
 /*
 @media (prefers-color-scheme: dark) {
@@ -30,14 +25,21 @@
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   -webkit-text-size-adjust: 100%;
+  overflow: auto;
+}
+:root * {
+  font-family: unset;
+  color: unset;
+  background-color: unset;
 }
 
 * {
-  font-size: 1rem;
+  font-size: 1.2rem;
 }
 
 html {
-  height: 100%;
+  overflow: auto;
+  height: fit-content;
 }
 
 body {
@@ -60,11 +62,18 @@ body {
 .main-content {
   max-width: 1440px;
   margin: auto auto;
-  height: calc(100% - 90px);
+  height: fit-content;
+  overflow: auto;
 }
 
 header {
   margin: 5px auto;
+}
+
+@media (max-width: 450px) {
+  #app {
+    padding: 0 12px;
+  }
 }
 
 /*# sourceMappingURL=Style.css.map */
