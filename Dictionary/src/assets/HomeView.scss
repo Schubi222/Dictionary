@@ -1,0 +1,23 @@
+.Home{
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+
+  justify-content: center;
+  & > * {
+    font-size: 2.5rem !important;
+  }
+  label{
+    margin-bottom: 10px;
+    font-weight: bold;
+  }
+  input{
+    border-radius: 9999px;
+    outline: none;
+    border: 2px solid darkgray;
+    padding: 10px 25px;
+    margin: auto 5%;
+    font-family: unset;
+  }
+
+}

@@ -1,4 +1,3 @@
-@use "variables";
 .Menu{
   display: flex;
   flex-direction: row;
@@ -23,13 +22,13 @@
       border: none;
       height: fit-content;
       width: fit-content;
-      background-color: variables.$background-color;
+      background-color: var(--background-color);
 
-      color: variables.$call-to-action;
-      -webkit-text-fill-color: variables.$text-color;
+      color: var(--call-to-action);
+      -webkit-text-fill-color: var(--text-color);
 
       option{
-        color: variables.$text-color;
+        color: var(--text-color);
       }
     }
     .color-mode{

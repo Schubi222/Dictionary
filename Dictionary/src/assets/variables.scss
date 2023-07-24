@@ -1,7 +1,21 @@
-$background-color:#242424;
-$text-color:rgba(255, 255, 255, 0.87);
-$call-to-action:#a842f8;
-$opposite-color:white;
+:root{
+  --background-color:#242424;
+  --text-color:rgba(255, 255, 255, 0.87);
+  --opposite-color:white;
+  --call-to-action:#a842f8;
+  &.light {
+    --background-color:white;
+    --text-color:#191919;
+    --opposite-color:black;
+  }
+  *{
+    font-family: unset;
+    color: unset;
+    background-color: unset;
+  }
+}
+
+/*
 @media (prefers-color-scheme: dark) {
 
-}
+}*/

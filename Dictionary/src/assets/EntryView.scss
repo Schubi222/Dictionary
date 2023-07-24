@@ -1,0 +1,12 @@
+.footer{
+  display: inline;
+  a {
+    display: inline;
+    &:after{
+      content: ",";
+    }
+    &:last-child:after {
+      content: "";
+    }
+  }
+}

@@ -1,0 +1,14 @@
+.footer {
+  display: inline;
+}
+.footer a {
+  display: inline;
+}
+.footer a:after {
+  content: ",";
+}
+.footer a:last-child:after {
+  content: "";
+}
+
+/*# sourceMappingURL=EntryView.css.map */

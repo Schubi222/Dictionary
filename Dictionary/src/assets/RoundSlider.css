@@ -10,10 +10,10 @@
   height: 0;
 }
 .switch input:checked + .slider {
-  background-color: #2196F3;
+  background-color: darkgrey;
 }
 .switch input:focus + .slider {
-  box-shadow: 0 0 1px #2196F3;
+  box-shadow: 0 0 1px darkgrey;
 }
 .switch input:checked + .slider:before {
   transform: translateX(26px);
@@ -26,7 +26,7 @@
   left: 0;
   bottom: 0;
   right: 0;
-  background-color: rgba(168, 66, 248, 0.8);
+  background-color: var(--call-to-action);
   transition: 0.4s;
 }
 .slider:before {
