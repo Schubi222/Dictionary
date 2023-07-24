@@ -20,4 +20,8 @@
   font-family: unset;
 }
 
+.error::placeholder {
+  color: darkred;
+}
+
 /*# sourceMappingURL=HomeView.css.map */

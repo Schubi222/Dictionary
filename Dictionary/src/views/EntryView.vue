@@ -1,7 +1,7 @@
 <template>
   <div class="Entry">
 
-    <input type="text" @keyup.enter="queryData" id="search" placeholder="Search" v-model="searchTerm">
+    <input type="text" @keyup.enter="error_check_before_query" id="search" placeholder="Search" v-model="searchTerm" ref="input">
 
     <div class="Content" v-if="queried_data && queried_data.title !== 'No Definitions Found'">
 
@@ -44,18 +44,30 @@
 </template>
 
 <script setup lang="ts">
-import {Ref, ref} from "vue";
+import {onMounted, ref} from "vue";
 
-const props = defineProps({search_term_passed:String})
+const props = defineProps(
+  ['searchTerm']
+)
 
 const searchTerm = ref('')
 
-const queried_data: Ref<JSON> = ref()
+const queried_data = ref()
 
-const synonymQuery = (e) =>{
+const input = ref()
+
+const synonymQuery = (e:any) =>{
   searchTerm.value = e.target.textContent
-  console.log(searchTerm.value)
-  console.log(e.target)
+  error_check_before_query()
+}
+function error_check_before_query(){
+  if(searchTerm.value === ""){
+    input.value.classList.add('error')
+    input.value.placeholder = "Enter Your Search"
+    return
+  }
+  input.value.classList.remove('error')
+  input.value.placeholder = "Search"
   queryData()
 }
 async function queryData(){
@@ -63,6 +75,12 @@ async function queryData(){
   queried_data.value = await response.json()
 }
 
+onMounted(() =>{
+  if (props.searchTerm){
+    searchTerm.value = props.searchTerm
+    error_check_before_query()
+  }
+});
 </script>
 
 <style scoped>

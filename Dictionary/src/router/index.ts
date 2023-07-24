@@ -14,6 +14,13 @@ const router:Router = createRouter({
           path:'/search',
           name:'search',
           component:EntryView,
+          props:true,
+        },
+        {
+          path:'/search/:searchTerm',
+          name:'search-searchTerm',
+          component:EntryView,
+          props:true,
         },
     ]
 
